@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="form-group">
+    <label>Enter address</label>
+    <input type="text" class="form-control col-lg-6" (change)="setMarker($event)" placeholder="Your Current Location"
+      autocorrect="on" autocapitalize="off" spellcheck="on" type="text" #insearch>
+    <select class="form-control  col-lg-4" (change)="selectRange($event.target.value)">
+      <option value="">--- Select Radius ---</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+      <option value="30">30</option>
+      <option value="40">40</option>
+    </select>
+    <!-- <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #nearsearch> -->
+    <select class="form-control" (change)="changeDest($event.target.value)">
+      <option *ngFor="let dest of dests" value={{dest.name}}>
+        {{dest.name}}
+      </option>
+    </select>
+  </div>
+
+  <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom" id="map" style="width: 65%;height: 300px;">
+    <!-- <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)"></agm-marker> -->
+    <agm-direction [origin]="origin" [destination]="destination">
+    </agm-direction>
+  </agm-map>
+
+  <h5>Destination Address: {{address}}</h5>
+  <!-- <div>Latitude: {{latitude}}</div>
+  <div>Longitude: {{longitude}}</div> -->
+  <div>Duration: {{duration}}</div>
+  <div>Distance: {{distance}}</div>
+</div>
