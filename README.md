@@ -16,7 +16,7 @@ npm install
 # To Run this Application Register and enable the Google Maps APIs first using following link
 1. https://developers.google.com/maps/documentation/javascript/get-api-key
 2. Open the above link and follow the instructions in it.
-3. Login with your gmail account and enable services Maps JavaScript API, Geocoding API, Places API,Distance Matrix API
+3. Login with your gmail account and enable services Maps JavaScript API, Geocoding API, Places API,Distance Matrix API,Directions API,Gelocation API
 4. Set the generated key in "app.module.ts" file and "app.component.ts" for key 'apiKey'
 
 ## Development server
